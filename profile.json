@@ -186,7 +186,7 @@
                     },
                     "to": [
                         {
-                            "key_code": ";"
+                            "key_code": "semicolon"
                         }
                     ],
                     "type": "basic"
