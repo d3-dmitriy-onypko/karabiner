@@ -190,25 +190,6 @@
                         }
                     ],
                     "type": "basic"
-                },
-                {
-                    "from": {
-                        "key_code": "s",
-                        "modifiers": {
-                            "mandatory": [
-                                "right_command",
-                                "right_control",
-                                "right_shift",
-                                "right_option"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "}"
-                        }
-                    ],
-                    "type": "basic"
                 }
             ]
         }
