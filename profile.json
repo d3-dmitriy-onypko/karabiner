@@ -169,7 +169,7 @@
                 },
                 {
                     "from": {
-                        "key_code": "q",
+                        "key_code": "a",
                         "modifiers": {
                             "mandatory": [
                                 "right_command",
@@ -181,7 +181,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "semicolon"
+                            "key_code": "open_bracket"
                         }
                     ],
                     "type": "basic"
