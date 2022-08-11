@@ -166,12 +166,7 @@
                         }
                     ],
                     "type": "basic"
-                }
-            ]
-        },
-        {
-            "description": "Hyper Cursor symbols",
-            "manipulators": [
+                },
                 {
                     "from": {
                         "key_code": "q",
