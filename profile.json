@@ -1,5 +1,8 @@
 {
   "title": "extend",
+  "maintainers": ["vaporif"],
+  "homepage": "https://github.com/d3-dmitriy-onypko",
+  "import_url": "karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/d3-dmitriy-onypko/karabiner/main/profile.json",
   "rules": [
     {
       "description": "CapsLock to Hyper/Escape",
