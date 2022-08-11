@@ -184,7 +184,7 @@
           },
           "to": [
             {
-              "key_code": "("
+              "key_code": "open_bracket"
             }
           ],
           "type": "basic"
@@ -203,7 +203,7 @@
             },
             "to": [
                 {
-                    "key_code": ")"
+                    "key_code": "close_bracket"
                 }
             ],
             "type": "basic"
