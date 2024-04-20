@@ -1,3 +1,5 @@
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/vaporif/.oh-my-zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -8,15 +10,13 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export PATH=/Users/vaporif/.local/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$(brew --prefix)/opt/python@3/libexec/bin:$PATH"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export MODULAR_HOME="$HOME/.modular"
 export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/vaporif/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
