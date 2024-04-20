@@ -3,7 +3,7 @@
    ```shell
    cd
    brew bundle install
-   git clone https://github.com/vaporif/dotfiles.git
+   git clone --recurse-submodule https://github.com/vaporif/dotfiles.git
    cd dotfiles
    stow .
    ```
