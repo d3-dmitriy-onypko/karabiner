@@ -162,3 +162,4 @@ lvim.plugins = {
     vim.api.nvim_command("augroup END")
   end
 }
+
