@@ -126,7 +126,7 @@ export GPG_TTY=$(tty)
 alias vi="~/.local/bin/lvim"
 alias lg='lazygit'
 alias grep='rg'
-alias ls="eza -a --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias ls="eza -a" 
 export NNN_BMS="r:$HOME/Repos;3:$HOME/Repos/core-refactor"
 n ()
 {
