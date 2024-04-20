@@ -8,9 +8,13 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Add .NET to $PATH
-export PATH="/usr/local/share/dotnet:$PATH"
-
+export PATH=/Users/vaporif/.local/bin:$PATH
+export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$(brew --prefix)/opt/python@3/libexec/bin:$PATH"
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export MODULAR_HOME="$HOME/.modular"
+export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/vaporif/.oh-my-zsh"
 
@@ -78,7 +82,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting rust aws docker helm kubectl kubectx terraform brew docker-compose)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete rust aws docker helm kubectl kubectx terraform brew docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 source <(kubectl completion zsh)
@@ -108,7 +112,6 @@ source <(kubectl completion zsh)
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
 [ -s "/Users/vaporif/.svm/svm.sh" ] && source "/Users/vaporif/.svm/svm.sh"
 
@@ -117,16 +120,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="/usr/local/sbin:$PATH"
 
-
-# Load Angular CLI autocompletion.
-#source <(ng completion script)
 export GPG_TTY=$(tty)
-
 
 alias vi="~/.local/bin/lvim"
 alias lg='lazygit'
 alias grep='rg'
-
 
 n ()
 {
@@ -161,6 +159,7 @@ n ()
 
 #eval "$(zsh)"
 eval "$(zellij setup --generate-auto-start zsh)" 
+
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
@@ -178,16 +177,6 @@ esac
 ulimit -Sn 4096      # Increase open files.
 ulimit -Sl unlimited # Increase max locked memory.
 
-export PATH=/Users/vaporif/.local/bin:$PATH
-export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="$(brew --prefix)/opt/python@3/libexec/bin:$PATH"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-export MODULAR_HOME="$HOME/.modular"
-export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
 
 bindkey -v
 eval "$(fzf --zsh)"
