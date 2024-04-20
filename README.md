@@ -7,3 +7,4 @@
    cd dotfiles
    stow .
    ```
+3. Install [LunarVim](https://www.lunarvim.org/)
