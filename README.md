@@ -1,5 +1,6 @@
-1. Install [Brew](https://brew.sh/)
-2. Run
+1. Clone repo to ~
+2. Install [Brew](https://brew.sh/)
+3. Run
    ```shell
    cd
    brew bundle install
@@ -7,4 +8,4 @@
    cd dotfiles
    stow .
    ```
-3. Install [LunarVim](https://www.lunarvim.org/)
+4. Install [LunarVim](https://www.lunarvim.org/)
