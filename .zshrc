@@ -82,8 +82,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete rust aws docker helm kubectl kubectx terraform brew docker-compose)
-
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting rust aws docker helm kubectl kubectx terraform brew docker-compose)
+# Not ture about zsh-autocomplete
+# plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete rust aws docker helm kubectl kubectx terraform brew docker-compose)
 source $ZSH/oh-my-zsh.sh
 source <(kubectl completion zsh)
 
@@ -125,7 +126,8 @@ export GPG_TTY=$(tty)
 alias vi="~/.local/bin/lvim"
 alias lg='lazygit'
 alias grep='rg'
-
+alias ls="eza -a --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+export NNN_BMS="r:$HOME/Repos;3:$HOME/Repos/core-refactor"
 n ()
 {
     # Block nesting of nnn in subshells
@@ -181,6 +183,8 @@ ulimit -Sl unlimited # Increase max locked memory.
 bindkey -v
 eval "$(fzf --zsh)"
 
+source ~/fzf-git.sh/fzf-git.sh
+
 FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 FZF_ALT_C_COMMAND="fd --type=d --strip-cwd-prefix --exclude .git  --hidden"
@@ -192,5 +196,24 @@ fzf_compgen_path() {
 fzf_compgen_dir() {
   fd --type=d --exclude .git . "$1"
 }
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
-source ~/fzf-git.sh/fzf-git.sh
+# Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments to fzf.
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo \$'{}"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview "bat -n --color=always --line-range :500 {}" "$@" ;;
+  esac
+}
+
+eval "$(zoxide init zsh)"
+
+alias cd="z"
