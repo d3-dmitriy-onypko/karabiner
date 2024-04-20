@@ -123,7 +123,7 @@ export PATH="/usr/local/sbin:$PATH"
 export GPG_TTY=$(tty)
 
 
-alias lvi="~/.local/bin/lvim"
+alias vi="~/.local/bin/lvim"
 alias lg='lazygit'
 alias grep='rg'
 
@@ -188,3 +188,20 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 export MODULAR_HOME="$HOME/.modular"
 export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
+
+bindkey -v
+eval "$(fzf --zsh)"
+
+FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+FZF_ALT_C_COMMAND="fd --type=d --strip-cwd-prefix --exclude .git  --hidden"
+
+fzf_compgen_path() {
+  fd --hidden --exclude ".git" . "$1"
+}
+
+fzf_compgen_dir() {
+  fd --type=d --exclude .git . "$1"
+}
+
+source ~/fzf-git.sh/fzf-git.sh
