@@ -1,7 +1,6 @@
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.relativenumber = true
-
 lvim.log.level = "info"
 lvim.format_on_save.enabled = true
 lvim.format_on_save = {
@@ -9,7 +8,6 @@ lvim.format_on_save = {
   pattern = { "*.lua", "*.rs" },
   timeout = 1000,
 }
-
 
 lvim.builtin.treesitter.ensure_installed = {
   "lua",
@@ -29,7 +27,6 @@ local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
 
 local codelldb_path = mason_path .. "bin/codelldb"
 local liblldb_path = mason_path .. "packages/codelldb/extension/lldb/lib/liblldb.dylib"
-
 
 pcall(function()
   require("rust-tools").setup {
@@ -147,9 +144,6 @@ lvim.plugins = {
       }
     end,
   },
-  {
-    "wakatime/vim-wakatime"
-  },
   "itchyny/vim-cursorword",
   event = { "BufEnter", "BufNewFile" },
   config = function()
@@ -162,4 +156,3 @@ lvim.plugins = {
     vim.api.nvim_command("augroup END")
   end
 }
-
