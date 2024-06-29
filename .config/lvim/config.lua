@@ -23,11 +23,6 @@ formatters.setup {
   { command = "stylua", filetypes = { "lua" } },
 }
 
-local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
-
-local codelldb_path = mason_path .. "bin/codelldb"
-local liblldb_path = mason_path .. "packages/codelldb/extension/lldb/lib/liblldb.dylib"
-
 vim.api.nvim_set_keymap("n", "<m-d>", "<cmd>RustOpenExternalDocs<Cr>", { noremap = true, silent = true })
 
 lvim.builtin.which_key.mappings["C"] = {
@@ -36,7 +31,16 @@ lvim.builtin.which_key.mappings["C"] = {
   t = { "<cmd>RustLsp testables<Cr>", "Testables" },
   e = { "<cmd>RustLsp expandMacro<Cr>", "Macro Expand" },
   h = { "<cmd>RustLsp hover actions<Cr>", "Hover" },
+  M = { "<cmd>RustLsp rebuildProcMacros<Cr>", "Rebuild Macros" },
+  g = { "<cmd>RustLsp codeAction<Cr>", "Code Action" },
+  x = { "<cmd>RustLsp explainError<Cr>", "Explain Error" },
+  d = { "<cmd>RustLsp renderDiagnostic<Cr>", "Diagnostic" },
   c = { "<cmd>RustLsp flyCheck<Cr>", "Check" },
+  y = { "<cmd>lua require'crates'.open_repository()<cr>", "[crates] open repository" },
+  P = { "<cmd>lua require'crates'.show_popup()<cr>", "[crates] show popup" },
+  i = { "<cmd>lua require'crates'.show_crate_popup()<cr>", "[crates] show info" },
+  f = { "<cmd>lua require'crates'.show_features_popup()<cr>", "[crates] show features" },
+  D = { "<cmd>lua require'crates'.show_dependencies_popup()<cr>", "[crates] show dependencies" },
 }
 
 lvim.plugins = {
@@ -44,6 +48,28 @@ lvim.plugins = {
     'mrcjkb/rustaceanvim',
     version = '^4',
     lazy = false,
+  },
+  {
+    "saecki/crates.nvim",
+    version = "v0.4.0",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("crates").setup {
+        null_ls = {
+          enabled = true,
+          name = "crates.nvim",
+        },
+        popup = {
+          border = "rounded",
+        },
+      }
+    end,
+  },
+  {
+    "j-hui/fidget.nvim",
+    config = function()
+      require("fidget").setup()
+    end,
   },
   "itchyny/vim-cursorword",
   event = { "BufEnter", "BufNewFile" },
