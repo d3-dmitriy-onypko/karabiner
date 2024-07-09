@@ -23,6 +23,8 @@ formatters.setup {
   { command = "stylua", filetypes = { "lua" } },
 }
 
+require "lspconfig".nixd.setup{}
+
 vim.api.nvim_set_keymap("n", "<m-d>", "<cmd>RustOpenExternalDocs<Cr>", { noremap = true, silent = true })
 
 lvim.builtin.which_key.mappings["C"] = {
@@ -48,6 +50,14 @@ lvim.plugins = {
     'mrcjkb/rustaceanvim',
     version = '^4',
     lazy = false,
+    ft = { "rust" },
+    config = function()
+    vim.g.rustaceanvim = {
+      server = {
+        on_attach = require("lvim.lsp").common_on_attach
+      },
+    }
+  end,
   },
   {
     "saecki/crates.nvim",
