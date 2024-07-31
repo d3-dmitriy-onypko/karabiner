@@ -31,7 +31,7 @@ lvim.builtin.which_key.mappings["C"] = {
   name = "Rust",
   r = { "<cmd>RustLsp runnables<Cr>", "Runnables" },
   t = { "<cmd>RustLsp testables<Cr>", "Testables" },
-  e = { "<cmd>RustLsp expandMacro<Cr>", "Macro Expand" },
+  E = { "<cmd>RustLsp expandMacro<Cr>", "Macro Expand" },
   h = { "<cmd>RustLsp hover actions<Cr>", "Hover" },
   M = { "<cmd>RustLsp rebuildProcMacros<Cr>", "Rebuild Macros" },
   g = { "<cmd>RustLsp codeAction<Cr>", "Code Action" },
@@ -48,7 +48,7 @@ lvim.builtin.which_key.mappings["C"] = {
 lvim.plugins = {
   {
     'mrcjkb/rustaceanvim',
-    version = '^4',
+    version = '^5',
     lazy = false,
     ft = { "rust" },
     config = function()
