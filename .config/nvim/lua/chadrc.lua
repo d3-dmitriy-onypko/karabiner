@@ -5,12 +5,16 @@
 local M = {}
 
 M.base46 = {
-	theme = "tokyonight",
-
+	theme = "everforest",
 	-- hl_override = {
 	-- 	Comment = { italic = true },
 	-- 	["@comment"] = { italic = true },
 	-- },
+  --
+}
+
+M.ui = {
+  lsp = { signature = true },
 }
 
 return M
