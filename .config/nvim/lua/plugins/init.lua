@@ -4,6 +4,7 @@ return {
     event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
   },
+  -- {'akinsho/bufferline.nvim', tag = "v4.7.0", requires = 'nvim-tree/nvim-web-devicons'},
   {
     'smoka7/hop.nvim',
     version = "*",
@@ -12,7 +13,7 @@ return {
     },
     keys = {
       {
-        "<leader>fj",
+        "<leader>fq",
         function()
           require("hop").hint_words()
         end,

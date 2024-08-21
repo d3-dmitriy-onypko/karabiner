@@ -5,7 +5,6 @@
 local M = {}
 
 M.base46 = {
-	theme = "everforest",
 	-- hl_override = {
 	-- 	Comment = { italic = true },
 	-- 	["@comment"] = { italic = true },
@@ -14,6 +13,7 @@ M.base46 = {
 }
 
 M.ui = {
+	theme = "everforest",
   lsp = { signature = true },
 }
 
