@@ -34,6 +34,11 @@ require("lazy").setup({
 require("lualine").setup({
 options = { theme = 'everforest' },
   sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics', {'filename', path = 4 } },
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'},
     lualine_c = {
       function()
         -- invoke `progress` here.

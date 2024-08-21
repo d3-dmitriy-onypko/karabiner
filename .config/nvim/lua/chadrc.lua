@@ -15,6 +15,9 @@ M.base46 = {
 M.ui = {
 	theme = "everforest",
   lsp = { signature = true },
+  tabufline = {
+    enabled = false
+  }
 }
 
 return M
