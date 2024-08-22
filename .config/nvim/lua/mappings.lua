@@ -15,3 +15,7 @@ nomap("n", "<leader>h")
 map("n", "<leader>w", "<cmd>w!<CR>", { desc = "Save"})
 map("n", "<leader>fl", "<cmd>Telescope resume<cr>", { desc = "Telescope last search" })
 map("n", "<leader>cx", "<cmd>RustLsp explainError<Cr>", { desc = "Explain Error" })
+
+map("n", "<tab>", "<cmd>bn<CR>")
+map("n", "<S-tab>", "<cmd>bp<CR>")
+map("n", "q<tab>", "<cmd>bdelete<CR>")
