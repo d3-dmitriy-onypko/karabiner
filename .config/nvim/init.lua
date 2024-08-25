@@ -1,6 +1,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
@@ -197,13 +197,23 @@ require('lazy').setup({
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
+    -- event = 'VeryLazy',
+    -- keys = {
+    --   {
+    --     '<leader>?',
+    --     function()
+    --       require('which-key').show { global = false }
+    --     end,
+    --     desc = 'Buffer Local Keymaps (which-key)',
+    --   },
+    -- },
     config = function() -- This is the function that runs, AFTER loading
       require('which-key').setup {
         icons = {
-          -- set icon mappings to true if you have a Nerd Font
-          mappings = vim.g.have_nerd_font,
-          -- If you are using a Nerd Font: set icons.keys to an empty table which will use the
-          -- default whick-key.nvim defined Nerd Font icons, otherwise define a string table
+          --   -- set icon mappings to true if you have a Nerd Font
+          mappings = false,
+          --   -- If you are using a Nerd Font: set icons.keys to an empty table which will use the
+          --   -- default whick-key.nvim defined Nerd Font icons, otherwise define a string table
           keys = vim.g.have_nerd_font and {} or {
             Up = '<Up> ',
             Down = '<Down> ',
@@ -272,7 +282,7 @@ require('lazy').setup({
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
-      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+      { 'nvim-tree/nvim-web-devicons' },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
