@@ -683,8 +683,6 @@ require('lazy').setup({
     lazy = false,
     priority = 1000,
     config = function()
-      -- Optionally configure and load the colorscheme
-      -- directly inside the plugin declaration.
       vim.g.everforest_enable_italic = true
       vim.cmd.colorscheme 'everforest'
     end,
@@ -699,7 +697,7 @@ require('lazy').setup({
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
     config = function()
-      -- Better Around/Inside textobjects
+      -- Better Around/Inside textobject
       --
       -- Examples:
       --  - va)  - [V]isually select [A]round [)]paren
@@ -753,15 +751,13 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'kickstart.plugins.debug',
-  require 'kickstart.plugins.indent_line',
   --require 'kickstart.plugins.lint',
-  --require 'kickstart.plugins.autopairs',
+  require 'plugins.indent_line',
   require 'plugins.neo-tree',
   require 'plugins.dap',
   require 'plugins.trouble',
   -- require 'plugins.autopairs',
-  --require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
