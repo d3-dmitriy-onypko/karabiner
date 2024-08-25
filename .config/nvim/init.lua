@@ -134,6 +134,7 @@ require('lazy').setup({
           require('hop').hint_words()
         end,
         mode = { 'n', 'x', 'o' },
+        desc = '[S]earch [Q]uick Hop',
       },
     },
   },
@@ -142,7 +143,7 @@ require('lazy').setup({
     dependencies = 'nvim-lua/plenary.nvim',
     config = true,
     keys = { -- load the plugin only when using it's keybinding:
-      { '<leader>u', "<cmd>lua require('undotree').toggle()<cr>" },
+      { '<leader>u', "<cmd>lua require('undotree').toggle()<cr>", desc = '[U]ndotree' },
     },
   },
   {
@@ -202,6 +203,7 @@ require('lazy').setup({
 
       -- Document existing key chains
       require('which-key').add {
+        { '<leader>x', group = 'Trouble' },
         { '<leader>c', group = '[C]ode' },
         { '<leader>d', group = '[D]ocument' },
         { '<leader>r', group = '[R]ename' },
@@ -300,7 +302,7 @@ require('lazy').setup({
           winblend = 10,
           previewer = false,
         })
-      end, { desc = '[.] Fuzzily search in current buffer' })
+      end, { desc = 'Fuzzily search in current buffer' })
 
       -- It's also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
@@ -741,6 +743,7 @@ require('lazy').setup({
   --require 'kickstart.plugins.autopairs',
   require 'plugins.neo-tree',
   require 'plugins.dap',
+  require 'plugins.trouble',
   -- require 'plugins.autopairs',
   --require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
