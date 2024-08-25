@@ -15,3 +15,5 @@ vim.keymap.set('n', '<leader>/', 'gcc', { desc = 'Toggle Comment', remap = true 
 vim.keymap.set('v', '<leader>/', 'gc', { desc = 'Toggle comment', remap = true })
 vim.keymap.set('n', '<leader>w', '<cmd>w!<CR>', { desc = 'Save' })
 vim.keymap.set('n', '<Leader>e', '<Cmd>Neotree toggle<CR>')
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
