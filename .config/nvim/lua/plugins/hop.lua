@@ -6,7 +6,7 @@ return {
   },
   keys = {
     {
-      '<leader>sq',
+      '<leader>fq',
       function()
         require('hop').hint_words()
       end,
