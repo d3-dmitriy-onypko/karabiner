@@ -93,15 +93,12 @@ require('lazy').setup({
     end,
   },
   require 'plugins.mini',
-  -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   require 'plugins.treesitter',
-  --require 'kickstart.plugins.lint',
   require 'plugins.indent_line',
   require 'plugins.neo-tree',
   require 'plugins.dap',
   require 'plugins.trouble',
-  -- require 'plugins.autopairs',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

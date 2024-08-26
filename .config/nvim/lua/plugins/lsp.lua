@@ -110,17 +110,13 @@ return {
     vim.g.rustaceanvim = {
       server = {
         capabilities = capabilities,
-        default_settings = {
-          ['rust-analyzer'] = {
-            checkOnSave = {
-              command = 'clippy',
-            },
-            cargo = {
-              -- uncomment for wasm
-              -- target = "wasm32-unknown-unknown",
-            },
-          },
-        },
+        -- default_settings = {
+        --     cargo = {
+        --       -- uncomment for wasm
+        --       -- target = "wasm32-unknown-unknown",
+        --     },
+        --   },
+        -- },
       },
     }
     -- Enable the following language servers
