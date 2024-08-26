@@ -105,6 +105,8 @@ require('lazy').setup({
   require 'plugins.neo-tree',
   require 'plugins.dap',
   require 'plugins.trouble',
+  require 'plugins.neogit',
+  require 'plugins.cursorword',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
