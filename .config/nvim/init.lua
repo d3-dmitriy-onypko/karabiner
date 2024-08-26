@@ -20,7 +20,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 20
 vim.lsp.inlay_hint.enable()
 
 -- Highlight when yanking (copying) text
@@ -57,11 +57,6 @@ require('lazy').setup({
   require 'plugins.hop',
   require 'plugins.undotree',
   {
-    'mrcjkb/rustaceanvim',
-    version = '^5',
-    lazy = false,
-  },
-  {
     'saecki/crates.nvim',
     event = { 'BufRead Cargo.toml' },
     config = function()
@@ -70,30 +65,13 @@ require('lazy').setup({
   },
   require 'plugins.which-key',
   require 'plugins.telescope',
-  {
-    'folke/lazydev.nvim',
-    ft = 'lua',
-    opts = {
-      library = {
-        -- Load luvit types when the `vim.uv` word is found
-        { path = 'luvit-meta/library', words = { 'vim%.uv' } },
-      },
-    },
-  },
+  require 'plugins.lazydev',
   { 'Bilal2453/luvit-meta', lazy = true },
   require 'plugins.lsp',
   require 'plugins.cmp',
+  require 'plugins.rustacean',
   require 'plugins.conform',
   require 'plugins.lualine',
-  {
-    'sainnhe/everforest',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.g.everforest_enable_italic = true
-      vim.cmd.colorscheme 'everforest'
-    end,
-  },
   'mg979/vim-visual-multi',
   require 'plugins.mini',
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
@@ -110,6 +88,7 @@ require('lazy').setup({
   require 'plugins.trouble',
   require 'plugins.neogit',
   require 'plugins.cursorword',
+  require 'plugins.theme',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
