@@ -39,6 +39,8 @@ vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
 
+require 'mappings'
+
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
@@ -92,6 +94,7 @@ require('lazy').setup({
       vim.cmd.colorscheme 'everforest'
     end,
   },
+  'mg979/vim-visual-multi',
   require 'plugins.mini',
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   require 'plugins.treesitter',
@@ -127,6 +130,5 @@ require('lazy').setup({
   },
 })
 
-require 'mappings'
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
