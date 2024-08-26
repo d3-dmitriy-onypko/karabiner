@@ -95,6 +95,12 @@ require('lazy').setup({
   require 'plugins.mini',
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   require 'plugins.treesitter',
+  {
+    'nvim-treesitter/nvim-treesitter-context',
+    opts = {
+      enable = true,
+    },
+  },
   require 'plugins.indent_line',
   require 'plugins.neo-tree',
   require 'plugins.dap',
