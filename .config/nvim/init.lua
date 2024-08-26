@@ -56,13 +56,6 @@ require('lazy').setup({
   require 'plugins.gitsigns',
   require 'plugins.hop',
   require 'plugins.undotree',
-  {
-    'saecki/crates.nvim',
-    event = { 'BufRead Cargo.toml' },
-    config = function()
-      require('crates').setup()
-    end,
-  },
   require 'plugins.which-key',
   require 'plugins.telescope',
   require 'plugins.lazydev',
@@ -70,18 +63,14 @@ require('lazy').setup({
   require 'plugins.lsp',
   require 'plugins.cmp',
   require 'plugins.rustacean',
+  require 'plugins.crates',
   require 'plugins.conform',
   require 'plugins.lualine',
   'mg979/vim-visual-multi',
   require 'plugins.mini',
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   require 'plugins.treesitter',
-  {
-    'nvim-treesitter/nvim-treesitter-context',
-    opts = {
-      enable = true,
-    },
-  },
+  require 'plugins.treesitter-context',
   require 'plugins.indent_line',
   require 'plugins.neo-tree',
   require 'plugins.dap',
