@@ -11,12 +11,12 @@ return {
   config = true,
   keys = {
     {
-      '<leader>gg',
+      '<leader>gs',
       function()
         require('neogit').open()
       end,
       mode = '',
-      desc = '[G]it show',
+      desc = '[G]it [s]how',
     },
     {
       '<leader>gc',

@@ -59,6 +59,7 @@ require('lazy').setup({
   require 'plugins.which-key',
   require 'plugins.telescope',
   require 'plugins.lazydev',
+  require 'plugins.lazygit',
   { 'Bilal2453/luvit-meta', lazy = true },
   {
     'windwp/nvim-autopairs',
