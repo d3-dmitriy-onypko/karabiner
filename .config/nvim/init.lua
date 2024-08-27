@@ -65,6 +65,7 @@ require('lazy').setup({
     event = 'InsertEnter',
     opts = {},
   },
+  require 'plugins.dashboard',
   require 'plugins.lsp',
   require 'plugins.cmp',
   require 'plugins.rustacean',
