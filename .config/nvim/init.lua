@@ -60,6 +60,11 @@ require('lazy').setup({
   require 'plugins.telescope',
   require 'plugins.lazydev',
   { 'Bilal2453/luvit-meta', lazy = true },
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    opts = {},
+  },
   require 'plugins.lsp',
   require 'plugins.cmp',
   require 'plugins.rustacean',
