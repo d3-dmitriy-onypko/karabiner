@@ -1,9 +1,31 @@
 return {
-  'sainnhe/everforest',
+  'neanias/everforest-nvim',
   lazy = false,
   priority = 1000,
   config = function()
-    vim.g.everforest_enable_italic = true
-    vim.cmd.colorscheme 'everforest'
+    local everforest = require 'everforest'
+    everforest.setup {
+      background = 'soft',
+      transparent_background_level = 0,
+      italics = true,
+      disable_italic_comments = false,
+      on_highlights = function(hl, _)
+        hl['@string.special.symbol.ruby'] = { link = '@field' }
+      end,
+    }
+    everforest.load()
   end,
 }
+
+-- return {
+--   'sho-87/kanagawa-paper.nvim',
+--   lazy = false,
+--   priority = 1000,
+--   opts = {},
+-- }
+
+-- return {
+--   'fenetikm/falcon',
+--   lazy = false,
+--   priority = 1000,
+-- }
